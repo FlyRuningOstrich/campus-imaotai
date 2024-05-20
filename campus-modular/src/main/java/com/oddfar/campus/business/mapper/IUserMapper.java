@@ -71,7 +71,7 @@ public interface IUserMapper extends BaseMapperX<IUser> {
 
     @Update("SET @row_number = 0;\n" +
             "UPDATE i_user\n" +
-            "SET `minute` = (@row_number := @row_number + 1) % 50 + 1\n" +
+            "SET `minute` = (@row_number := @row_number + 1) % 30 + 1\n" +
             "ORDER BY RAND();")
     void updateUserMinuteEven();
 
